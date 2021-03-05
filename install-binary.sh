@@ -5,7 +5,11 @@
 PROJECT_NAME="helm-unittest"
 PROJECT_GH="lrills/$PROJECT_NAME"
 
-: ${HELM_PLUGIN_PATH:="$(helm home)/plugins/helm-unittest"}
+if [[ $HELM3 == "1" ]]; then
+  : ${HELM_PLUGIN_PATH:="$HELM_PLUGINS/helm-unittest"}
+else
+  : ${HELM_PLUGIN_PATH:="$(helm home)/plugins/helm-unittest"}
+fi
 
 # Convert the HELM_PLUGIN_PATH to unix if cygpath is
 # available. This is the case when using MSYS2 or Cygwin

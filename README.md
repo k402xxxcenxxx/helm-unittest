@@ -32,6 +32,11 @@ $ helm plugin install https://github.com/lrills/helm-unittest
 
 It will install the latest version of binary into helm plugin directory.
 
+For helm3 users,
+```
+$ HELM3=1 helm plugin install https://github.com/lrills/helm-unittest
+```
+
 ## Get Started
 
 Add `tests` in `.helmignore` of your chart, and create the following test file at `$YOUR_CHART/tests/deployment_test.yaml`:
